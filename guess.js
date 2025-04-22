@@ -1,15 +1,16 @@
 let n = Math.floor(Math.random() * 4) + 1;
-console.log(n); 
+console.log(n); // For debugging purposes; 
 let guess = parseInt(prompt('Enter the number: '));
 
 while (n !== guess) {
-    if (guess < n) {
+    if (isNaN(guess)) {
+        console.log("Enter a valid number.");
+    } else if (guess < n) {
         console.log("The number is too low");
-        guess = parseInt(prompt('Enter the number: '));
     } else if (guess > n) {
         console.log("The number is too big");
-        guess = parseInt(prompt('Enter the number: '));
     }
+    guess = parseInt(prompt('Enter the number: '));
 }
 
 console.log("Congratulations, you guessed correct!!!");
